@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternShield - Fake Internship Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="shield-icon">🛡️</span>
+                        <h1>InternShield</h1>
+                    </div>
+                    <nav class="nav">
+                        <button class="theme-toggle" id="themeToggle">🌙</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Landing Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Is Your Internship Offer Real?</h2>
+                        <p>Paste the email, get instant verification powered by AI analysis</p>
+                        <p class="subtitle">No login required • Instant results • 100% free</p>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-graphic">📧✅</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analyzer Section -->
+            <section class="analyzer-section">
+                <div class="container">
+                    <div class="analyzer-card">
+                        <h3>Paste Your Internship Email</h3>
+                        <div class="form-group">
+                            <label>Email Content</label>
+                            <textarea 
+                                id="emailInput" 
+                                placeholder="Paste the entire email content here..." 
+                                rows="12"
+                            ></textarea>
+                            <div class="char-info">
+                                <small>Character count: <span id="charCount">0</span>/5000</small>
+                                <small id="charWarning" class="warning" style="display:none;">Email is too short</small>
+                            </div>
+                        </div>
+                        <button class="btn-primary btn-analyze" onclick="analyzeEmail()">
+                            <span class="btn-text">Analyze Email</span>
+                            <span class="btn-spinner" id="btnSpinner" style="display:none;">⏳</span>
+                        </button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading-state" style="display:none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing email structure and content...</p>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <div id="resultsCard" class="results-card"></div>
+                        <button class="btn-secondary" onclick="resetAnalyzer()">← Analyze Another Email</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <h3>How InternShield Works</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📋</div>
+                            <h4>Paste Email</h4>
+                            <p>Copy and paste the internship email content directly</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h4>AI Analysis</h4>
+                            <p>Our system analyzes grammar, domain, links, and more</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Instant Results</h4>
+                            <p>Get verification status with detailed risk breakdown</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h4>100% Private</h4>
+                            <p>Your email data is never stored or shared</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <div class="container">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>Is my email data safe?</h4>
+                            <p>Yes! We don't store any email data. Analysis happens instantly and then it's deleted.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What do the verdicts mean?</h4>
+                            <p><strong>Verified:</strong> Likely legitimate | <strong>Suspicious:</strong> Has red flags | <strong>Fake:</strong> High probability of scam</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How accurate is the analysis?</h4>
+                            <p>Our AI analyzes 50+ risk factors including domain verification, grammar, links, and more for high accuracy.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What if I'm unsure about the result?</h4>
+                            <p>Always contact the company directly through their official website to verify any internship opportunity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 InternShield - Protect yourself from fake internships</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
